@@ -9,12 +9,12 @@ import { UsersService} from './users.service';
 })
 export class AppComponent implements OnInit {
   title = 'appClientUser';
-  description = 'This is app for getting users from server!!!';
-  users: string[] = [];
+  description = 'This is app for getting users from server!!!!!!!!!!!';
+  users: IUser[] = [];
 
-  constructor(private usersService: UsersService){}
+  constructor(private usersService: UsersService) {}
 
-  ngOnInit(){
-    this.usersService.getUsers().subscribe(data=>this.users = data);
+  ngOnInit() {
+    this.usersService.getUsers().subscribe(data => this.users = data);
   }
 }
