@@ -4,6 +4,8 @@ module.exports = {
       password: 'root',
       database: 'users',
       dialect: 'mysql',
+      seederStorage: 'sequelize'
     },
 }
+
 

@@ -13,4 +13,9 @@ export class UsersService {
 
     return this.http.get('http://localhost:8080/api/v1/users');
   }
+
+  getOneUser(): Observable<any> {
+
+    return this.http.get('http://localhost:8080/api/v1/users/aaa');
+  }
 }

@@ -1,6 +1,11 @@
 {
     "name": "app-user",
     "version": "1.0.0",
+    "scripts": {
+        "seeders":  "node_modules/.bin/sequelize db:seed:all",
+        "migrations": "node_modules/.bin/sequelize db:migrate"
+
+    },
     "dependencies": {
         "express": "^4.16.3",
         "mysql2": "^1.6.1",
