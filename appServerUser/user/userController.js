@@ -46,7 +46,8 @@ module.exports = {
 
     async deleteUser(req, res){
         let userId  = parseInt(req.params.userId);
-        res.sendStatus(204).send(await userService.deleteUserById(userId));
+        let result = await userService.deleteUserById(userId)
+        res.sendStatus(204);
     },
 
     async createNewUser(req, res){

@@ -1,0 +1,11 @@
+<div>
+    <h1>Page of all Users</h1>
+    <ul>
+        <li *ngFor='let user of users' >
+            {{user.firstName}}
+            <button (click)='deleteUser(user)' routerLink='/reload'>Delete</button>
+            <button [routerLink]="['/users', user.id]" >Ubdate</button>
+        </li>
+
+    </ul>
+</div>
