@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
   users: IUser[] = [];
 
   @Output()
-  oneUser: IUser;
+  user: IUser;
 
   constructor(
     private usersService: UserService,
@@ -36,7 +36,7 @@ export class UsersComponent implements OnInit {
   }
 
   goToPageOfUser(user: IUser) {
-    this.oneUser = user;
+    this.user = user;
     this.router.navigate(['/users', user.id]
    );
   }

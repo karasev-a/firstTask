@@ -10,6 +10,8 @@ import {HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 
+
+
 // const appRoutes: Routes = [
 //   { path: '', component: HomeComponent },
 //   { path: 'users', component: UsersComponent },
@@ -24,7 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     UserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

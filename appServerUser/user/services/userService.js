@@ -8,29 +8,16 @@ module.exports = {
         //console.log(User.findAll())
         return User.findAll();
     },
+
     async getUserById(userId){
-        try {
-            let user = User.findOne({
-                where: {
-                    id: userId,
-                }
-            })
-        } catch (error) {
-            throw new Error();
-            
-        }
-
+        return Number.isInteger(userId)
+        ? User.findOne({
+            where: {
+                id: userId,
+            }
+        })
+        : null;
     },
-
-    // async getUserById(userId){
-    //     return Number.isInteger(userId)
-    //     ? User.findOne({
-    //         where: {
-    //             id: userId,
-    //         }
-    //     })
-    //     : null;
-    // },
 
     async deleteUserById(userId) {
         return Number.isInteger(userId)
