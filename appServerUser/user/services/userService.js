@@ -43,7 +43,7 @@ module.exports = {
                     id: userId,
                 }
             })
-            return !!result[0];
+            return result;
         }
 
     }

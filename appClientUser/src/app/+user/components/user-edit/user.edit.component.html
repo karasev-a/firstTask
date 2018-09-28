@@ -1,0 +1,34 @@
+<!-- <div>
+
+        <button (click)='deleteUser(user)'>Save</button>
+        <button>Cancel</button>
+
+</div>
+ -->
+
+<form [formGroup]="userEditForm" (ngSubmit)="onSubmit()">
+        <label>
+                First Name:
+                <input type="text" formControlName="firstName">
+        </label>
+        <br>
+        <label>
+                Last Name:
+                <input type="text" formControlName="lastName">
+        </label>
+        <br>
+        <label>
+                Phone:
+                <input type="text" formControlName="phone">
+        </label>
+        <br>
+        <label>
+                Address:
+                <input type="text" formControlName="address">
+        </label>
+        <p>
+                <button type='submit'>Update</button>
+                <button [routerLink]="['/users']">Back</button>
+        </p>
+
+</form>

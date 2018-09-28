@@ -1,12 +1,13 @@
 
-<div>
+<!-- <div>
     <p>{{user.firstName}}</p>
     <p>{{user.lastName}}</p>
     <p>{{user.phone}}</p>
     <p>{{user.address}}</p>
-</div>
+</div> -->
 
-<!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
     <label>
         First Name:
         <input type="text" formControlName="firstName">
@@ -28,7 +29,7 @@
     </label>
     <p>
         <button type='submit'>Update</button>
-        <button >Back</button>
+        <button [routerLink]="['/users']">Back</button>
     </p>
 
-</form> -->
+</form>

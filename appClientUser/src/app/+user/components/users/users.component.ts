@@ -26,19 +26,20 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.getAllUsers();
-
-    // this.usersService.getOneUser().subscribe(data => this.oneUser = data);
   }
 
   deleteUser(user: IUser) {
     this.usersService.deleteOneUser(user.id).subscribe((result) => this.getAllUsers());
-   // this.usersService.getUsers().subscribe(data => this.users = data);
   }
 
   goToPageOfUser(user: IUser) {
     this.user = user;
     this.router.navigate(['/users', user.id]
    );
+  }
+
+  goToPageOfCreate() {
+    this.router.navigate(['/users/new_user']);
   }
 
 }

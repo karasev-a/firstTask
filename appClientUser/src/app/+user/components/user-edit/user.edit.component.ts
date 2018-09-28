@@ -6,13 +6,13 @@ import { Location } from '@angular/common';
 import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
+  selector: 'app-user-edit',
+  templateUrl: './user.edit.component.html',
   providers: [UserService]
 })
-export class UserComponent implements OnInit {
+export class UserEditComponent {
   user: IUser;
-  userForm: FormGroup = new FormGroup({
+  userEditForm: FormGroup = new FormGroup({
     firstName: new FormControl(``),
     lastName: new FormControl(''),
     phone: new FormControl(''),
@@ -26,26 +26,8 @@ export class UserComponent implements OnInit {
   ) { }
 
 
-  ngOnInit() {
-    this.getUser();
-  }
-
-  getUser() {
-    const id = +this.route.snapshot.paramMap.get('userId');
-    this.usersService.getOneUser(id).subscribe(user => {
-      this.user = user;
-      this.userForm.setValue({
-        'firstName': user.firstName,
-        'lastName': user.lastName,
-        'phone': user.phone,
-        'address': user.address,
-      });
-    });
-  }
-
   onSubmit() {
-    this.user = Object.assign(this.user, this.userForm.value);
-    this.usersService.updateUser(this.user.id, this.user).subscribe(res => {
+    this.usersService.createUser(this.userEditForm.value).subscribe(res => {
       this.user = res;
       this.location.back();
     });
