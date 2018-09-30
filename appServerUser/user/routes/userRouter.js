@@ -1,15 +1,32 @@
 const express = require('express');
+const joi = require('joi');
+
 const userController = require('../userController');
+const checkParams = require('../../server/models/check-params.middleware')
+const User = require('../models/user')
 
 const router = express.Router();
 
-router.get('/:userId', userController.getOneUser);
-router.delete('/:userId', userController.deleteUser);
-router.put('/:userId', userController.updateUser);
+const handleErrorAsync = func => async (req, res, next) => {
+  try {
+    await func(req, res, next);
+  } catch (error) {
+    next(error)
+  }
+}
 
-router.post('/', userController.createNewUser);
+router.get('/:userId', handleErrorAsync(userController.getOneUser));
+router.delete('/:userId', handleErrorAsync(userController.deleteUser));
+router.put('/:userId', checkParams.validateSequelizeEntity(User), handleErrorAsync(userController.updateUser));
 
-router.get('/', userController.getAllUsers);
+router.post('/', checkParams.validateParamsJoi(joi.object().keys({
+  firstName: joi.string().required(),
+  lastName: joi.string(),
+  phone: joi.string(),
+  address: joi.string(),
+})), handleErrorAsync(userController.createNewUser));
+
+router.get('/', handleErrorAsync(userController.getAllUsers));
 
 
 
