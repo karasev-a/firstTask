@@ -1,11 +1,13 @@
 <div>
     <h1>Page of all Users</h1>
-    <button (click)='goToPageOfCreate()'>Create User</button>
+    <button routerLink='/users/new_user'>Create User</button>
     <ul>
-        <li *ngFor='let user of users' >
-            {{user.firstName}}
-            <button (click)='deleteUser(user)' >Delete</button>
-            <button (click)='goToPageOfUser(user)'  >Ubdate</button>
+        <li *ngFor='let user of users'>
+            <p>
+                <app-user [user]='user'></app-user>
+                <button (click)='deleteUser(user)'>Delete</button>
+                <button (click)='goToUpdateUser(user)'>UpdateButton</button>
+            </p>
             <br>
         </li>
     </ul>

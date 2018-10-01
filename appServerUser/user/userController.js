@@ -1,7 +1,4 @@
-
 const userService = require('./services/userService');
-
-
 
 module.exports = {
   async getAllUsers(req, res) {
@@ -18,11 +15,6 @@ module.exports = {
       res.sendStatus(404);
     }
   },
-
-  // async getOneUser(req, res){
-  //     let userId  = parseInt(req.params.userId);
-  //     res.status(200).send(await userService.getUserById(userId));
-  // },
 
   async deleteUser(req, res) {
     let userId = parseInt(req.params.userId);
@@ -44,6 +36,6 @@ module.exports = {
     let result = await userService.updateUser(userId, user);
     logger.info(`Update user: ${user}`)
     res.status(200).send(result);
-
   }
+
 }

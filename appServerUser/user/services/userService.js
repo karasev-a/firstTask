@@ -5,7 +5,6 @@ const User = require('../models/user');
 module.exports = {
 
     async getAllUsers(){
-        //console.log(User.findAll())
         return User.findAll();
     },
 

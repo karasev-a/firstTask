@@ -18,9 +18,9 @@ export class UserService {
     return this.http.delete(`http://localhost:8080/api/v1/users/${id}`);
   }
 
-  getOneUser(id: number): Observable<any> {
+  getOneUser(id: number): Observable<IUser> {
 
-    return this.http.get(`http://localhost:8080/api/v1/users/${id}`);
+    return this.http.get<IUser>(`http://localhost:8080/api/v1/users/${id}`);
   }
 
   updateUser(id: number, user: IUser): Observable<any> {
