@@ -21,10 +21,13 @@ class LoggerService {
     global.logger = this.commonLogger;
   }
 
-  static getCommonLogger(){
-
+  getCommonLogger(){
+    console.log(winston.version);
+    console.log(path.join(process.cwd(),"logs", "common", "log.log"));
+    console.log(`${__dirname}`);
+    
     const fileLogger = new(winston.transports.File)({
-      fileName: path.join("logs", "common", "log.log"),
+      filename: path.join('logs', 'common', 'log.log'),
       handleExceptions: true,
       maxsize: fileSize,
       format: winston.format.combine(

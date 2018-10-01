@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { Router } from '@angular/router';
-import { queryRefresh } from '@angular/core/src/render3/query';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,6 +16,7 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private usersService: UserService,
+    private route: ActivatedRoute,
     private router: Router,
   ) { }
 
@@ -32,14 +32,8 @@ export class UsersComponent implements OnInit {
     this.usersService.deleteOneUser(user.id).subscribe((result) => this.getAllUsers());
   }
 
-  goToPageOfUser(user: IUser) {
-    this.user = user;
-    this.router.navigate(['/users', user.id]
-   );
+  goToUpdateUser(user) {
+    const id = +this.route.snapshot.paramMap.get('userId');
+      this.router.navigate(['/users', user.id]);
   }
-
-  goToPageOfCreate() {
-    this.router.navigate(['/users/new_user']);
-  }
-
 }

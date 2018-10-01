@@ -10,8 +10,8 @@ module.exports = class DBService {
             await MigrationService.runSeeders();
         }
         catch (err) {
-            console.log('DB init ERROR');
-            console.log(err);
+            logger.error('DB init ERROR');
+            logger.error(err);
             
         }
     }

@@ -6,48 +6,9 @@ const router = require('./user/routes/userRouter')
 const db = require('./db/models/db')
 const DBService = require('./db/services/db-service');
 
-// const loggers = require('./tools/loggers');
-// loggers.initLoggers();
-// loggers.initGlobalLogger();
-
-
-const winston = require('winston');
-let fileSize = 1024000;
-let myFormat =  winston.format.printf(info => {
-  return `${info.timestamp} ${info.level}: ${info.message}`;
-});
-
-const getCommonLoger = () => {
-  const fileLogger = new winston.transports.File({
-    filename: path.join("tools", "logs", "common", "log.log"),
-    handleExceptions: true,
-    maxsize: fileSize,
-    format: winston.format.combine(
-      winston.format.colorize(),
-      winston.format.timestamp(),
-      myFormat
-    )
-  })
-  
-  global.logger = winston.createLogger({
-    transports: [
-      new winston.transports.Console({
-        format: winston.format.combine(
-          winston.format.colorize(),
-          winston.format.timestamp(),
-          myFormat
-        )
-      }),
-      fileLogger 
-    ],
-    exceptionHandlers: [fileLogger]
-  });
-
-  // return logg;
-}
-
-getCommonLoger();
-
+const loggers = require('./tools/loggers');
+loggers.initLoggers();
+loggers.initGlobalLogger();
 
 const app = express();
 
