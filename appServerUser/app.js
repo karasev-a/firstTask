@@ -29,7 +29,7 @@ const getCommonLoger = () => {
     )
   })
   
-  const logg = winston.createLogger({
+  global.logger = winston.createLogger({
     transports: [
       new winston.transports.Console({
         format: winston.format.combine(
@@ -43,10 +43,10 @@ const getCommonLoger = () => {
     exceptionHandlers: [fileLogger]
   });
 
-  return logg;
+  // return logg;
 }
 
-const logger = getCommonLoger();
+getCommonLoger();
 
 
 const app = express();

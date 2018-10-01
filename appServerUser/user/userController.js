@@ -13,6 +13,7 @@ module.exports = {
     let user = await userService.getUserById(userId);
     if (user) {
       res.status(200).send(user);
+      
     } else {
       res.sendStatus(404);
     }
@@ -32,6 +33,7 @@ module.exports = {
   async createNewUser(req, res) {
     let user = req.body;
     let result = await userService.createUser(user);
+    logger.info(`Create user: ${user}`)
     res.status(201).send(result);
 
   },
@@ -40,6 +42,7 @@ module.exports = {
     let userId = parseInt(req.params.userId);
     let user = req.body;
     let result = await userService.updateUser(userId, user);
+    logger.info(`Update user: ${user}`)
     res.status(200).send(result);
 
   }

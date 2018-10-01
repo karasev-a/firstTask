@@ -17,6 +17,7 @@ const handleErrorAsync = func => async (req, res, next) => {
 
 router.get('/:userId', handleErrorAsync(userController.getOneUser));
 router.delete('/:userId', handleErrorAsync(userController.deleteUser));
+//router.put('/:userId',  handleErrorAsync(userController.updateUser));
 router.put('/:userId', checkParams.validateSequelizeEntity(User), handleErrorAsync(userController.updateUser));
 
 router.post('/', checkParams.validateParamsJoi(joi.object().keys({

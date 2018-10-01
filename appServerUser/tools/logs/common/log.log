@@ -1,1 +1,50 @@
-2018-09-30T21:56:39.929Z [32minfo[39m: Start server
+2018-10-01T06:36:59.577Z [32minfo[39m: Start server
+2018-10-01T06:39:22.380Z [32minfo[39m: Start server
+2018-10-01T06:39:57.481Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T06:46:13.940Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T06:46:52.047Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T06:50:29.012Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:03:09.396Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:03:23.491Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:04:27.141Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:06:13.473Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:06:57.790Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:12:59.077Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:15:25.881Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:19:22.469Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:26:30.378Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:30:12.993Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:38:49.300Z [32minfo[39m: Start server
+2018-10-01T07:39:00.139Z [32minfo[39m: Added user: [object SequelizeInstance:user]
+2018-10-01T07:40:10.959Z [32minfo[39m: Start server
+2018-10-01T07:43:46.873Z [32minfo[39m: Start server
+2018-10-01T08:00:31.077Z [32minfo[39m: Start server
+2018-10-01T08:00:45.919Z [32minfo[39m: Start server
+2018-10-01T08:15:09.797Z [32minfo[39m: Start server
+2018-10-01T08:16:30.322Z [32minfo[39m: Start server
+2018-10-01T08:16:40.045Z [32minfo[39m: SequelizeValidationError: Validation error: Validation len on firstName failed
+    at Promise.all.then (D:\inter\firstTask\appServerUser\node_modules\sequelize\lib\instance-validator.js:77:15)
+    at tryCatcher (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:694:18)
+    at Promise._fulfill (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:638:18)
+    at PromiseArray._resolve (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise_array.js:126:19)
+    at PromiseArray._promiseFulfilled (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise_array.js:144:14)
+    at Promise._settlePromise (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:574:26)
+    at Promise._settlePromise0 (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues (D:\inter\firstTask\appServerUser\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:810:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+2018-10-01T08:17:21.872Z [32minfo[39m: Start server
+2018-10-01T08:18:20.865Z [32minfo[39m: Start server
+2018-10-01T08:20:32.334Z [32minfo[39m: Start server
+2018-10-01T08:22:22.544Z [32minfo[39m: Start server
+2018-10-01T08:22:44.744Z [32minfo[39m: Create user: [object Object]
+2018-10-01T08:23:41.892Z [32minfo[39m: Update user: [object Object]

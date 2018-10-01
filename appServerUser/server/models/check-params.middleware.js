@@ -32,7 +32,7 @@ module.exports = class CheckParamsMiddleware {
       let model = entity.build(req[collectionName]);
       try {
         await model.validate();
-        next
+        next();
       } catch (error) {
         res.status(400).send(error);
       }
