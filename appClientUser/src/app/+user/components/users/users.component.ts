@@ -1,39 +1,35 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  providers: [UserService]
 })
 export class UsersComponent implements OnInit {
-  users: IUser[] = [];
+  public users: IUser[] = [];
 
-  @Output()
-  user: IUser;
+  @Output() public user: IUser;
 
   constructor(
-    private usersService: UserService,
-    private route: ActivatedRoute,
-    private router: Router,
+    private _usersService: UserService,
+    private _router: Router,
   ) { }
 
-  getAllUsers() {
-    this.usersService.getUsers().subscribe(data => this.users = data);
+  private getAllUsers() {
+    this._usersService.getUsers().subscribe(data => this.users = data);
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.getAllUsers();
   }
 
-  deleteUser(user: IUser) {
-    this.usersService.deleteOneUser(user.id).subscribe((result) => this.getAllUsers());
+  public deleteUser(user: IUser) {
+    this._usersService.deleteOneUser(user.id).subscribe(() => this.getAllUsers());
   }
 
-  goToUpdateUser(user) {
-    const id = +this.route.snapshot.paramMap.get('userId');
-      this.router.navigate(['/users', user.id]);
+  public goToUpdateUser(user) {
+      this._router.navigate(['/users', user.id]);
   }
 }

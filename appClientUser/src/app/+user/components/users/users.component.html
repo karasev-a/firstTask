@@ -4,9 +4,7 @@
     <ul>
         <li *ngFor='let user of users'>
             <p>
-                <app-user [user]='user'></app-user>
-                <button (click)='deleteUser(user)'>Delete</button>
-                <button (click)='goToUpdateUser(user)'>UpdateButton</button>
+                <app-user [user]='user' (updated)="goToUpdateUser($event)" (deleted)="deleteUser($event)"></app-user>
             </p>
             <br>
         </li>
