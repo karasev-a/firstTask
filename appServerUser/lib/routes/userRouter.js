@@ -1,9 +1,9 @@
 const express = require('express');
 const joi = require('joi');
 
-const userController = require('../userController');
-const checkParams = require('../../server/models/check-params.middleware')
-const User = require('../models/user')
+const userController = require('../user/userController');
+const checkParams = require('../server/models/check-params.middleware')
+const User = require('../user/models/user')
 
 const router = express.Router();
 

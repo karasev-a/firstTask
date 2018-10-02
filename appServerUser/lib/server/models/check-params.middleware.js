@@ -1,5 +1,5 @@
 const joi = require('joi');
-const RequestVerb = require('../../enums/request-verb-enum');
+const RequestVerb = require('../enums/request-verb-enum');
 
 module.exports = class CheckParamsMiddleware {
   static getCollectionName(req) {
