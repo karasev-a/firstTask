@@ -1,6 +1,8 @@
-<div *ngIf='user'>
-    <p>{{user.firstName}}</p>
-    <p>{{user.lastName}}</p>
-    <p>{{user.phone}}</p>
-    <p>{{user.address}}</p>
+<div>
+    <p>{{user?.firstName}}</p>
+    <p>{{user?.lastName}}</p>
+    <p>{{user?.phone}}</p>
+    <p>{{user?.address}}</p>
 </div>
+<button (click)='deleteUser(user)'>Delete</button>
+<button (click)='updateUser(user)'>UpdateButton</button>
