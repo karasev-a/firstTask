@@ -14,7 +14,7 @@ import { Observable, Subscription } from 'rxjs';
         input.ng-touched.ng-valid {border:solid green 2px;}
     `],
 })
-export class UserEditComponent implements OnInit, OnDestroy {
+export class UserEditComponent implements OnInit {
   @Input() public user: IUser;
   private _id: number;
   private _routeSubscription: Subscription;
@@ -31,20 +31,26 @@ export class UserEditComponent implements OnInit, OnDestroy {
     private _location: Location
   ) { }
 
+  // public ngOnInit() {
+  //   this._routeSubscription = this._route.params.subscribe(params => {
+  //     this._id = params['userId'];
+  //     if (this._id) {
+  //       this._getUser();
+  //     }
+  //   });
+  // }
+
   public ngOnInit() {
-    this._routeSubscription = this._route.params.subscribe(params => {
-      this._id = params['userId'];
-      if (this._id) {
-        this._getUser();
-      }
+    this._route.data.subscribe((data: {user: IUser}) => {
+      this.user = data.user;
     });
   }
 
-  public ngOnDestroy() {
-    if (this._routeSubscription) {
-      this._routeSubscription.unsubscribe();
-    }
-  }
+  // public ngOnDestroy() {
+  //   if (this._routeSubscription) {
+  //     this._routeSubscription.unsubscribe();
+  //   }
+  // }
 
   private _getUser() {
     this._usersService.getOneUser(this._id).subscribe(user => {
