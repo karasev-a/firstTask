@@ -9,6 +9,9 @@
                         <div *ngIf="userEditForm.controls['firstName'].errors.minlength">
                                 Name must be at least 3 characters long.
                         </div>
+                        <div *ngIf="userEditForm.controls['firstName'].errors.maxlength">
+                                Name must be less than  15 characters long.
+                        </div>
                 </div>
 
         </label>

@@ -18,8 +18,8 @@ export class UserEditComponent implements OnInit, OnDestroy {
   @Input() public user: IUser;
   private _id: number;
   private _routeSubscription: Subscription;
-  userEditForm: FormGroup = new FormGroup({
-    firstName: new FormControl(``, [Validators.required, Validators.minLength(3)]),
+  public userEditForm: FormGroup = new FormGroup({
+    firstName: new FormControl(``, [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     lastName: new FormControl(''),
     phone: new FormControl(''),
     address: new FormControl(''),
