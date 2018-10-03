@@ -1,7 +1,16 @@
 <form [formGroup]="userEditForm" (ngSubmit)="onSubmit()">
         <label>
                 First Name:
-                <input type="text" formControlName="firstName">
+                <input type="text" formControlName="firstName" required>
+                <div class="alert alert-danger" *ngIf="userEditForm.controls['firstName'].invalid && userEditForm.controls['firstName'].touched">
+                        <div *ngIf="userEditForm.controls['firstName'].errors.required">
+                                Name is required.
+                        </div>
+                        <div *ngIf="userEditForm.controls['firstName'].errors.minlength">
+                                Name must be at least 3 characters long.
+                        </div>
+                </div>
+
         </label>
         <br>
         <label>
@@ -19,7 +28,7 @@
                 <input type="text" formControlName="address">
         </label>
         <p>
-                <button type='submit'>Update</button>
+                <button type='submit' [disabled]="userEditForm.invalid">Update</button>
                 <button [routerLink]="['/users']">Back</button>
         </p>
 

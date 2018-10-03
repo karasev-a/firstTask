@@ -17,16 +17,16 @@ export class UsersComponent implements OnInit {
     private _router: Router,
   ) { }
 
-  private getAllUsers() {
+  private _getAllUsers() {
     this._usersService.getUsers().subscribe(data => this.users = data);
   }
 
   public ngOnInit() {
-    this.getAllUsers();
+    this._getAllUsers();
   }
 
   public deleteUser(user: IUser) {
-    this._usersService.deleteOneUser(user.id).subscribe(() => this.getAllUsers());
+    this._usersService.deleteOneUser(user.id).subscribe(() => this._getAllUsers());
   }
 
   public goToUpdateUser(user) {
