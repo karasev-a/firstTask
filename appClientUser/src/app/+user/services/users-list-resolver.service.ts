@@ -15,13 +15,12 @@ import { UserService } from './user.service';
     providedIn: 'root',
 })
 
-export class UserResolverService implements Resolve<IUser> {
+export class UsersListResolverService implements Resolve<IUser[]> {
 
     constructor(private _userService: UserService, private _router: Router) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): IUser | Observable<IUser> | Promise<IUser> {
-        const id = +route.params['userId'];
-        return this._userService.getOneUser(id);
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): IUser[] | Observable<IUser[]> | Promise<IUser[]> {
+        return this._userService.getUsers();
     }
 
 }
